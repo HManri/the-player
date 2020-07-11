@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "commonjs",
+        "allowSyntheticDefaultImports": true,
+        "jsx": "preserve",
+        "checkJs": true,
+        "baseUrl": "./src/app"
+    },
+    "exclude": ["node_modules", "**/node_modules/*"],
+    "include": ["src/app"]
+}
