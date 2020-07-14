@@ -1,11 +1,10 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = (env) => {
     const mode = env.mode;
-    // const isProduction = mode === 'production';
 
     const configuration = {
         entry: './src/app/index.jsx',
@@ -13,12 +12,6 @@ const config = (env) => {
             path: path.resolve(__dirname, 'dist'),
             filename: 'app.js',
             pathinfo: false,
-        },
-        optimization: {
-            // avoid extra optimization steps in develop
-            removeAvailableModules: false,
-            removeEmptyChunks: false,
-            splitChunks: false,
         },
         devServer: {
             open: true,
@@ -42,16 +35,6 @@ const config = (env) => {
                     include: [path.resolve(__dirname, 'src/app')],
                     exclude: /node_modules/,
                 },
-                // {
-                //     test: /\.(sa|sc|c)ss$/,
-                //     use: [
-                //         isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
-                //         'css-loader',
-                //         'sass-loader',
-                //     ],
-                //     include: path.resolve(__dirname, 'src/app'),
-                //     exclude: /node_modules/,
-                // },
                 {
                     test: /\.(js|jsx)$/,
                     use: [
@@ -71,24 +54,23 @@ const config = (env) => {
         plugins: [
             new HtmlWebpackPlugin({
                 hash: true,
-                // minify: true,
                 template: './src/www/index.html',
                 filename: './index.html',
             }),
-            // new CopyWebpackPlugin({
-            //     patterns: [{ from: path.resolve(__dirname, 'src/www') }],
-            // }),
-            // new CopyWebpackPlugin([
-            //     {
-            //         from: path.resolve(__dirname, 'src/www'),
-            //     },
-            // ]),
+            new CopyWebpackPlugin({
+                patterns: [{ from: path.resolve(__dirname, 'src/www') }],
+            }),
         ],
     };
 
-    // if (isProduction) {
-    //     configuration.plugins.push(new MiniCssExtractPlugin({ filename: 'css/styles.css' }));
-    // }
+    if (mode !== 'production') {
+        configuration.optimization = {
+            // avoid extra optimization steps in development
+            removeAvailableModules: false,
+            removeEmptyChunks: false,
+            splitChunks: false,
+        };
+    }
 
     return configuration;
 };
