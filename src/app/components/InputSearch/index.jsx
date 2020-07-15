@@ -6,15 +6,13 @@ import styles from './styles';
 
 const useStyles = createUseStyles(styles);
 
-const AutoComplete = memo(({ className, placeholder, value = '', onKeyEnter }) => {
+const InputSearch = memo(({ className, placeholder, value = '', onKeyEnter }) => {
     const theme = useTheme();
     const classes = useStyles({ theme });
-    const rootClassName = classnames('auto-complete', classes['auto-complete']);
+    const rootClassName = classnames('auto-complete', classes['auto-complete'], className);
     const inputClassName = classnames('auto-complete__input', classes.input);
 
-    const autoCompleteRef = useRef(null);
     const inputRef = useRef(null);
-
     const [inputValue, setInputValue] = useState(null);
 
     const onChangeInput = useCallback((event) => {
@@ -37,7 +35,7 @@ const AutoComplete = memo(({ className, placeholder, value = '', onKeyEnter }) =
     }, [value, inputValue]);
 
     return (
-        <div className={rootClassName} ref={autoCompleteRef}>
+        <div className={rootClassName}>
             <input
                 className={inputClassName}
                 type="text"
@@ -51,11 +49,11 @@ const AutoComplete = memo(({ className, placeholder, value = '', onKeyEnter }) =
     );
 });
 
-AutoComplete.propTypes = {
+InputSearch.propTypes = {
     className: PropTypes.string,
     placeholder: PropTypes.string,
     value: PropTypes.string,
     onKeyenter: PropTypes.func,
 };
 
-export default AutoComplete;
+export default InputSearch;

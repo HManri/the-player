@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import classnames from 'classnames';
 import { createUseStyles, useTheme } from 'react-jss';
 import { SearchMusicActions } from 'actions';
-import AutoComplete from 'components/AutoComplete';
+import InputSearch from 'components/InputSearch';
 import SongsTable from './SongsTable';
 import styles from './styles';
 
@@ -41,7 +41,7 @@ const Main = memo(({ searchText, searchMusic }) => {
             <div className={classes.title}>Welcome to Music Player!</div>
             <div className={classes.subtitle}>Find for any artist, song, album or genre</div>
             <div className={classes.search}>
-                <AutoComplete
+                <InputSearch
                     placeholder="Search an artist, song..."
                     onKeyEnter={makeSearch}
                     value={searchText}
