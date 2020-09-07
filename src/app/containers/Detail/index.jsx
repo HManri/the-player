@@ -75,10 +75,13 @@ const Detail = memo(({ searchTrack, history }) => {
 
     const changeTrack = useCallback(
         (action) => () => {
+            const autoPlay = !(audioRef.current.paused || audioRef.current.ended)
+                ? `?autoplay=1`
+                : '';
             if (action === 'previous' && state.previousTrack)
-                history.push(`/detail/${state.previousTrack.trackId}`);
+                history.push(`/detail/${state.previousTrack.trackId}${autoPlay}`);
             else if (action === 'next' && state.nextTrack)
-                history.push(`/detail/${state.nextTrack.trackId}`);
+                history.push(`/detail/${state.nextTrack.trackId}${autoPlay}`);
         },
         [state.previousTrack, state.nextTrack, history],
     );

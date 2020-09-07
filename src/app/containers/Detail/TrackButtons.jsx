@@ -80,13 +80,17 @@ const TrackButtons = memo(
 
         const previousTrackUrl = useMemo(() => {
             if (!previousTrack) return null;
-            return `/detail/${previousTrack}`;
-        }, [previousTrack]);
+            let url = `/detail/${previousTrack}`;
+            if (isPlaying) url = `${url}?autoplay=1`;
+            return url;
+        }, [previousTrack, isPlaying]);
 
         const nextTrackUrl = useMemo(() => {
             if (!nextTrack) return null;
-            return `/detail/${nextTrack}`;
-        }, [nextTrack]);
+            let url = `/detail/${nextTrack}`;
+            if (isPlaying) url = `${url}?autoplay=1`;
+            return url;
+        }, [nextTrack, isPlaying]);
 
         useEffect(() => {
             window.twttr.ready(() => {

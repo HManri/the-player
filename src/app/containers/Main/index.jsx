@@ -26,7 +26,7 @@ const useStyles = createUseStyles(styles);
 const Main = memo(({ searchText, searchMusic }) => {
     const theme = useTheme();
     const classes = useStyles({ theme });
-    const rootClassName = classnames('music-player__main', classes.main);
+    const rootClassName = classnames('the-player__main', classes.main);
 
     const makeSearch = useCallback(
         (text) => {
@@ -38,11 +38,11 @@ const Main = memo(({ searchText, searchMusic }) => {
 
     return (
         <div className={rootClassName}>
-            <div className={classes.title}>Welcome to Music Player!</div>
+            <div className={classes.title}>Welcome to The Player!</div>
             <div className={classes.subtitle}>Find for any artist, song, album or genre</div>
             <div className={classes.search}>
                 <InputSearch
-                    placeholder="Search an artist, song..."
+                    placeholder="Search for any artist, song..."
                     onKeyEnter={makeSearch}
                     value={searchText}
                 />

@@ -1,16 +1,27 @@
 # Simple Media Player using React and Redux
 
+## ⭐️ Live exercise
+
+http://hectormanrique.com/the-player/
+
+## 🧭 Description
+
 A simple media player for browsers who play sample music from Itunes.
 
 The search page works thanks to Itunes Search API, and the results of this search depends on Itunes Search API as well as the samples belong to them.
 
--   React - Hooks and all new staff added recently into the library
--   Redux
--   Integrated with Itunes Search API, Twitter Development API and Whatsapp Development API - search songs and share them in social networks
+## ⚙️ Techincal Features
 
-## Main features
+-   React - Hooks and all new staff added recently into the library.
+-   Redux.
+-   React-Router to navigate between pages.
+-   Redux-Persist to store app state in SessionStorage.
+-   Integrated with Itunes Search API, Twitter.Development API and Whatsapp Development API - search songs and share them in social networks.
+-   JSS for styled components.
 
--   Search for the music you want to listen. There are hundreds of songs to listen for!
--   See the previous and next song which you are going to listen.
--   Share your favourite songs with your beloved people using Whatsapp, or show to the whole world your preferred songs using Twitter.
--   Reproduce your favourite music without interruptions. Let the application start next song when current is finished.
+## 📜 Main features
+
+-   [x] Search for music in Itunes Search Api.
+-   [x] See the previous and next song which you are going to listen.
+-   [x] Share your songs using Whatsapp or Twitter
+-   [x] Start next song when current is finished without user interaction

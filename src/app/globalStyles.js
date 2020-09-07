@@ -25,7 +25,7 @@ export default {
             backgroundColor: '#eeeeee',
         },
     },
-    'music-player': {
+    'the-player': {
         boxSizing: 'border-box',
         width: '100%',
         height: '100%',

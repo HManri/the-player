@@ -13,7 +13,7 @@ const App = memo(() => {
 
     return (
         <ThemeProvider theme={theme}>
-            <div className={classes['music-player']}>
+            <div className={classes['the-player']}>
                 <Router>
                     <Switch>
                         <Route path="/" component={Main} exact />

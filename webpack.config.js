@@ -9,7 +9,7 @@ const config = (env) => {
     const configuration = {
         entry: './src/app/index.jsx',
         output: {
-            path: path.resolve(__dirname, 'dist'),
+            path: path.resolve(__dirname, 'docs'),
             filename: 'app.js',
             pathinfo: false,
         },
