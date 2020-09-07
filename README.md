@@ -2,7 +2,7 @@
 
 ## ⭐️ Live exercise
 
-http://hectormanrique.com/the-player/
+https://hectormanrique.com/the-player/
 
 ## 🧭 Description
 
