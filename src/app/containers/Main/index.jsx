@@ -39,7 +39,7 @@ const Main = memo(({ searchText, searchMusic }) => {
     return (
         <div className={rootClassName}>
             <div className={classes.title}>Welcome to The Player!</div>
-            <div className={classes.subtitle}>Find for any artist, song, album or genre</div>
+            <div className={classes.subtitle}>Search for any artist, song, album or genre</div>
             <div className={classes.search}>
                 <InputSearch
                     placeholder="Search for any artist, song..."
